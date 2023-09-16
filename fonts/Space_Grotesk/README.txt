@@ -1,23 +1,22 @@
-Oswald Variable Font
-====================
+Space Grotesk Variable Font
+===========================
 
-This download contains Oswald as both a variable font and static fonts.
+This download contains Space Grotesk as both a variable font and static fonts.
 
-Oswald is a variable font with this axis:
+Space Grotesk is a variable font with this axis:
   wght
 
 This means all the styles are contained in a single file:
-  Oswald-VariableFont_wght.ttf
+  SpaceGrotesk-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Oswald:
-  static/Oswald-ExtraLight.ttf
-  static/Oswald-Light.ttf
-  static/Oswald-Regular.ttf
-  static/Oswald-Medium.ttf
-  static/Oswald-SemiBold.ttf
-  static/Oswald-Bold.ttf
+in those cases you can use the static font files for Space Grotesk:
+  static/SpaceGrotesk-Light.ttf
+  static/SpaceGrotesk-Regular.ttf
+  static/SpaceGrotesk-Medium.ttf
+  static/SpaceGrotesk-SemiBold.ttf
+  static/SpaceGrotesk-Bold.ttf
 
 Get started
 -----------

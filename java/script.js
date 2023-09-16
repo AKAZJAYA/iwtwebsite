@@ -1,4 +1,5 @@
 
+// Slideshow
 let slideIndex = 0;
 showSlides();
 
@@ -18,4 +19,9 @@ function showSlides() {
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-        
+
+// Login Button
+document.getElementById("login").onclick = function(){
+
+    window.location.href="login.html";
+}
