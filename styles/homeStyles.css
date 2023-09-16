@@ -21,7 +21,7 @@ body{
 
 .header img{
     display: inline-block;
-    width: 5%;
+    width: 4.5%;
     border: 5px solid #336797;
     border-radius: 20%;
     float: left;
@@ -29,15 +29,16 @@ body{
 
 .header{
 
-    position:absolute;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 13%;
+    height: 12%;
     padding: 10px 30px;
     background: #386fa4;
     display: inline-block;
     text-align: center;
+    z-index: 10;
     
 }
 
@@ -73,25 +74,33 @@ body{
 
 /* Headtext */
 
-.slide{
-
-  
-}
-
 .headerTxt{
-
+  position: relative;
   width: 50%;
   display: inline-block;
+  vertical-align: top;
+  
 }
 
 .txt1{
     
     margin-top: 180px;
-    margin-left:300px ;
+    margin-left:400px ;
     font-size: 50px;
     text-align: justify;
     font-family: 'Oswald', sans-serif;
-    color: wheat
+    color: rgb(45, 69, 138);
+    
+}
+
+.txt2{
+
+    margin-top: 10px;
+    margin-left:400px ;
+    font-size: 19px;
+    text-align: justify;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(35, 26, 73);
 }
 
 
@@ -103,11 +112,11 @@ img {vertical-align: middle;} */
 /* Slideshow container */
 .slideBar {
 
-  
-  max-width: 1000px;
+  display: inline-block;
   position: relative;
- 
-  margin-left: 800px;
+  max-width: 45%;
+  margin-left: 30px;
+  margin-top: 200px;
   
 }
 
@@ -121,6 +130,11 @@ img {vertical-align: middle;} */
 }
 
 /* The dots/bullets/indicators */
+
+.dots{
+
+  margin-left: 250px;
+}
 .dot {
   height: 15px;
   width: 15px;
@@ -129,6 +143,7 @@ img {vertical-align: middle;} */
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  
 }
 
 .active {
@@ -153,16 +168,17 @@ img {vertical-align: middle;} */
 
 .footer{
   
+  position: relative;
   background-color: #336797;
   
 }
 .text .footTxt{
 
-  margin-top: 870px;
+  margin-top: 261px;
   margin-left: 150px;
   font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 15px;
+  padding: 14px;
   color: wheat;
 }
 a.help{
