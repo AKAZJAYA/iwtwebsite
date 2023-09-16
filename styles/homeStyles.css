@@ -1,4 +1,6 @@
 
+
+/* Home Page CSS */
 *{
 
     margin: 0;
@@ -36,7 +38,7 @@ body{
     width: 100%;
     height: 12%;
     padding: 10px 30px;
-    background: #336797;
+    background: linear-gradient(#28537a, #1582d6, #35bee0) ;
     display: inline-block;
     text-align: center;
     z-index: 10;
@@ -280,24 +282,24 @@ border: 2px solid #1b5996;
 border-radius: 10px;
 }
 
-.footer{
+footer{
   
   width: 100%;
   height: 7%;
-  position: relative;
-  background-color: #336797;
-  margin-top: 265px;
+  position: absolute;
+  background: linear-gradient(#1676be, #28537a) ;;
+  bottom: 0;
 }
-.text .footTxt{
 
-  margin-top: 261px;
-  margin-left: 150px;
+p.footxt{
+  left: 7%;
   font-size: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 14px;
   color: wheat;
-  position: relative;
+  position: absolute;
 }
+
 a.help{
 
   margin-left: 1300px;
