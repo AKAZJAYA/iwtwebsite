@@ -8,6 +8,7 @@
     <title>Registration - DoseGuardian</title>
     <link rel="stylesheet" href="styles/reg.css">
     <!-- <link rel="stylesheet" href="styles/homeStyles.css"> -->
+    <script defer src="java/reg.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             <a href="">Search Centers</a>
         </nav>
         <!-- Registration button -->
-        <button type="button" id="register">Register</button>
+        <!-- <button type="button" id="register">Register</button> -->
     </header>
 
 
@@ -42,19 +43,20 @@
             <!-- Registration form title -->
             <h3 class="title">Registration to the DoseGuardian</h3>
             <!-- Username input field -->
+            <form action="login.php" method="post">
             <div class="text-input-username">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Username" required>
             </div>
             <!-- Password input field -->
             <div class="text-input-password">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" required>
             </div>
             <!-- Confirm Password input field -->
             <div class="text-input-confirmpass">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Confirm Password">
+                <input type="password" placeholder="Confirm Password" required>
             </div>
             <!-- Full Name input field -->
             <div class="text-input-fullname">
@@ -68,6 +70,40 @@
                 <input type="radio" name="gender" id="female" checked="checked">
                 <label class="femaleL" for="female">Female</label>
             </div>
+            <div class="dateofbirth">
+                
+                <input type="date" class="dateselect">
+            </div>
+            <div class="text-input-mobilenumber">
+                <input type="tel" maxlength="10" placeholder="Mobile Number">
+            </div>
+
+            <div class="text-input-address">
+
+                <input type="text" class="address" placeholder="Address">
+            </div>
+
+            <div class="text-input-nicpass">
+
+                <input type="text" maxlength="12" class="nicpass" placeholder="NIC or Passport">
+            </div>
+            
+            <div class="register-button">
+                <input type="submit" class="reg-btn" value="Register">
+            </div>
+        </form>
+
+            <div class="above-login-txt">
+                
+                <lable class="login-txt">Already have an account ?</lable>
+            </div>
+
+            <div class="login-button">
+
+                <button id="log-btn">Login</button>
+            </div>
+
+            <img src="images/image0-removebg-preview.png" alt="" class="rumen">
         </div>
     </div>
     

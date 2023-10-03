@@ -40,8 +40,13 @@ document.getElementById("login").onclick = function() {
     window.location.href = "login.html";
 }
 
-// Register Button
+//Register Button
 document.getElementById("register").onclick = function() {
     // Redirect to the registration page when the register button is clicked
+    window.location.href = "register.html";
+}
+
+document.getElementById("vccRegister").onclick = function(){
+
     window.location.href = "register.html";
 }

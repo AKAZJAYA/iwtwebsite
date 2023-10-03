@@ -257,7 +257,7 @@ a.haveAcc {
 }
 
 /* Styling for the registration button */
-.reg-btn {
+#reg-btn {
     width: 55%;
     padding: 15px;
     color: white;

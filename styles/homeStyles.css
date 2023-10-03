@@ -237,7 +237,7 @@ body {
   margin-left: 350px;
 }
 
-.vccRegister {
+#vccRegister {
   background: #0a95ff;
   box-shadow: #5E5DF0 0 10px 20px -10px;
   box-sizing: border-box;
@@ -259,7 +259,7 @@ body {
   border-radius: 10px;
 }
 
-.vccRegister:hover {
+#vccRegister:hover {
   background: #0074cc;
   color: white;
   border: 2px solid #1b5996;

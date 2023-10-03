@@ -9,6 +9,7 @@
     <!-- Set the page title and link to an external stylesheet -->
     <link rel="stylesheet" href="styles/loginStyles.css">
     <!-- Link to the stylesheet for login page -->
+    <script defer src="java/login.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         </nav>
   
         <!-- Register Button -->
-        <button type="button" id="register">Register</button>
+        <!-- <button type="button" id="register">Register</button> -->
     </header>
 
     <!-- Login Form Container -->
@@ -44,19 +45,19 @@
             <!-- Username Input -->
             <div class="text-input">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Username" required>
             </div>
             <!-- Password Input -->
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" required>
             </div>
             <!-- Login Button -->
-            <button class="login-btn">LOGIN</button>
+            <button type="submit" class="login-btn">LOGIN</button>
             <!-- Link to Registration -->
             <a href="#" class="haveAcc">Don't you have an account?</a>
             <!-- Register Button -->
-            <button class="reg-btn">REGISTER</button>
+            <button type="button" id="reg-btn">REGISTER</button>
             <!-- Create Account Section -->
             <div class="create">
                 <!-- Arrow Icon -->
