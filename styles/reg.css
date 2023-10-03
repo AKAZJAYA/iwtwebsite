@@ -1,15 +1,17 @@
-/* Importing the 'Poppins' font from Google Fonts */
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Global styles */
+/* Global CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* Styling for the body element */
+/* Styling for the body */
 body {
     font-family: 'Poppins', sans-serif;
     height: 100vh;
@@ -17,9 +19,10 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /* Background gradient commented out */
 }
 
-/* Styling for the header image */
+/* Styling for the header logo */
 .header img {
     display: inline-block;
     width: 4.5%;
@@ -28,23 +31,21 @@ body {
     float: left;
 }
 
-
-
-/* Styling for the header */
+/* Styling for the header section */
 .header {
-    position: fixed; /* Fixed position to stay at the top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 12%;
     padding: 10px 30px;
-    background: linear-gradient(#28537a, #1582d6, #35bee0); /* Gradient background */
+    background: linear-gradient(#28537a, #1582d6, #35bee0);
     display: inline-block;
     text-align: center;
-    z-index: 10; /* Stacking order on top of other elements */
+    z-index: 10;
 }
 
-/* Styling for navigation links */
+/* Styling for navigation bar links */
 .navbar a {
     position: relative;
     font-size: 20px;
@@ -52,36 +53,37 @@ body {
     font-weight: 500;
     text-decoration: none;
     margin-left: 40px;
-    float: left; /* Float left for horizontal alignment */
+    float: left;
     margin-top: 35px;
     font-family: 'Space Grotesk', sans-serif;
 }
 
-/* Styling for the underline effect on navigation links */
+
+/* Navigation bar link underline before hover */
 .navbar a::before {
-    content: ''; /* Empty content */
+    content: '';
     position: absolute;
-    top: 100%; /* Positioned below the link text */
+    top: 100%;
     left: 0;
-    width: 0%; /* Initially no width */
-    height: 2px; /* Underline height */
+    width: 0%;
+    height: 2px;
     background: white;
-    transition: .3s; /* Smooth transition effect */
+    transition: .3s;
 }
 
-/* Hover effect to expand the underline on navigation links */
+/* Navigation bar link underline on hover */
 .navbar a:hover::before {
-    width: 100%; /* Full width on hover */
+    width: 100%;
 }
 
-/* Styling for the registration button */
+/* Registration Button design */
 #register {
     background: #0a95ff;
     box-shadow: #5E5DF0 0 10px 20px -10px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-family: Inter, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -95,11 +97,11 @@ body {
     word-break: break-word;
     border: 0;
     border-radius: 10px;
-    margin-top: 30px; /* Top margin */
-    margin-left: 1200px; /* Left margin */
+    margin-top: 30px;
+    margin-left: 1200px;
 }
 
-/* Hover effect for the registration button */
+/* Style for Registration Button on hover */
 #register:hover {
     background: #0074cc;
     color: white;
@@ -107,10 +109,10 @@ body {
     border-radius: 10px;
 }
 
-/* Styling for the main container */
+/* Container section styling */
 .container {
-    width: 50vw; /* 50% of the viewport width */
-    height: 60vh; /* 60% of the viewport height */
+    width: 80vw;
+    height: 70vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-areas: "login";
@@ -120,23 +122,22 @@ body {
     overflow: hidden;
 }
 
-
-/* Styling for the design part of the layout */
+/* Design section styling */
 .design {
-    grid-area: design;
-    display: none; /* Initially hidden */
+    grid-area: login;
+    display: none;
     position: relative;
 }
 
-/* Rotating elements by -45 degrees */
+/* Rotate pills by 45 degrees */
 .rotate-45 {
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
 }
 
-/* Design for pill-1 */
+/* Design for pill 1 */
 .design .pill-1 {
     bottom: 0;
-    left: -40px;
+    left: 345px;
     position: absolute;
     width: 80px;
     height: 200px;
@@ -144,10 +145,12 @@ body {
     border-radius: 40px;
 }
 
-/* Design for pill-2 */
+
+
+/* Design for pill elements */
 .design .pill-2 {
     top: -100px;
-    left: -80px;
+    left: 250px;
     position: absolute;
     height: 450px;
     width: 220px;
@@ -156,10 +159,9 @@ body {
     border: 30px solid #c2f8fc;
 }
 
-/* Design for pill-3 */
 .design .pill-3 {
     top: -100px;
-    left: 160px;
+    left: 110px;
     position: absolute;
     height: 200px;
     width: 100px;
@@ -167,49 +169,48 @@ body {
     border-radius: 70px;
 }
 
-/* Design for pill-4 */
 .design .pill-4 {
     bottom: -180px;
-    left: 220px;
+    left: 40px;
     position: absolute;
     height: 300px;
     width: 120px;
-    background: linear-gradient( #EEC0C6, #7EE8FA);
+    background: linear-gradient(#EEC0C6, #7EE8FA);
     border-radius: 70px;
 }
 
 /* Styling for the login area */
 .login {
-    grid-area: login;
+    grid-area: design;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: relative;
     background: white;
 }
 
-/* Styling for the login title */
+/* Styling for the registration title */
 .login h3.title {
-    margin: 15px 0;
+    margin-top: 50px;
+    margin-left: 300px;
     font-size: 30px;
 }
 
-/* Styling for text input fields */
-.text-input {
+/* Styling for the username input field */
+.text-input-username {
     background: #e6e6e6;
     height: 40px;
     display: flex;
-    width: 60%;
+    width: 25%;
     align-items: center;
     border-radius: 10px;
     padding: 5px 15px;
     margin: 5px 0;
-    margin-top: 10px;
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
-/* Styling for text input */
-.text-input input {
+/* Styling for the username input */
+.text-input-username input {
     background: none;
     border: none;
     outline: none;
@@ -218,10 +219,122 @@ body {
     margin-left: 10px;
 }
 
-/* Styling for icons in text input */
+/* Styling for the password input field */
+.text-input-password {
+    background: #e6e6e6;
+    height: 40px;
+    display: flex;
+    width: 25%;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin: 5px 0;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+
+/* Styling for password input */
+.text-input-password input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+/* Styling for confirm password input */
+.text-input-confirmpass {
+    background: #e6e6e6;
+    height: 40px;
+    display: flex;
+    width: 25%;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin: 5px 0;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.text-input-confirmpass input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+/* Styling for full name input */
+.text-input-fullname {
+    background: #e6e6e6;
+    height: 40px;
+    display: flex;
+    width: 30%;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin: 5px 0;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.text-input-fullname input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+/* Styling for gender selection */
+.gender-select {
+    margin-top: 25px;
+}
+
+/* Styling for radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Styling for gender selection labels */
+.gender-select label {
+    position: relative;
+    color: #7e9ffa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border: 2px solid #7e9ffa;
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin-left: 10px;
+    width: 130px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.gender-select label:before {
+    content: "";
+    height: 15px;
+    width: 15px;
+    border: 2px solid #7e9ffa;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* Styling for male label */
+.gender-select .maleL {
+    margin-left: 50px;
+}
+
+/* Styling for icon within text input */
 .text-input i {
     color: #686868;
 }
+
 
 /* Styling for input placeholders */
 ::placeholder {
@@ -231,17 +344,17 @@ body {
 
 /* Styling for the login button */
 .login-btn {
-    width: 68%;
+    width: 40%;
     padding: 15px;
     color: white;
-    background: linear-gradient(to right, #B9D1EB, #8eb3da, #F876DE);
+    background: linear-gradient(to right, #B9D1EB,#8eb3da, #F876DE);
     border: none;
     border-radius: 20px;
     cursor: pointer;
     margin-top: 15px;
 }
 
-/* Styling for links */
+/* Styling for anchor tags (links) */
 a {
     font-size: 12px;
     color: #9a9a9a;
@@ -250,7 +363,7 @@ a {
     text-decoration: none;
 }
 
-/* Styling for links with class haveAcc */
+/* Styling for anchor tags with class 'haveAcc' */
 a.haveAcc {
     margin-top: 15px;
     font-size: 14px;
@@ -258,70 +371,55 @@ a.haveAcc {
 
 /* Styling for the registration button */
 .reg-btn {
-    width: 55%;
+    width: 45%;
     padding: 15px;
     color: white;
-    background: linear-gradient(to left, #B9D1EB, #8eb3da, #F876DE);
+    background: linear-gradient(to left, #B9D1EB,#8eb3da, #F876DE);
     border: none;
     border-radius: 20px;
     cursor: pointer;
     margin-top: 15px;
 }
 
-/* Styling for the create section */
-.create {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 30px;
-}
-
-/* Styling for icons in the create section */
-.create i {
-    color: #9a9a9a;
-    margin-left: 10px;
-}
-
-/* Media query for screens with a minimum width of 768px */
+/* Media Query for screens with a minimum width of 768px */
 @media (min-width: 768px) {
-    /* Adjusting the layout for larger screens */
+    /* Adjusting the grid layout for larger screens */
     .container {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 75%;
         grid-template-areas: "design login";
     }
 
-    /* Displaying the design part on larger screens */
+    /* Display the 'design' element as a block */
     .design {
         display: block;
     }
 }
 
-
-/* Styling for the footer */
+/* Styling for the footer area */
 footer {
     width: 100%;
     height: 7%;
     position: absolute;
     background: linear-gradient(#1676be, #28537a);
     bottom: 0;
-  }
-  
-  /* Styling for footer text */
-  p.footxt {
+}
+
+/* Styling for footer text */
+p.footxt {
     left: 7%;
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 14px;
     color: wheat;
     position: absolute;
-  }
-  
-  /* Styling for help link in the footer */
-  a.help {
+}
+
+/* Styling for 'help and support' link in the footer */
+a.help {
     margin-left: 1300px;
     font-size: 15px;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: wheat;
     position: relative;
-  }
+}
