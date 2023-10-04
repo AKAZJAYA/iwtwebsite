@@ -1,0 +1,408 @@
+
+
+/* Home Page CSS */
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsla(0, 0%, 100%, 0.938);
+    background-size: cover;
+    background-position: center;
+    /* font-family: sans-serif; */
+    overflow: hidden;
+    
+}
+
+.heading{
+  /* position: relative; */
+  margin-top: 200px;
+  text-align: center;
+}
+
+.header #logo{
+    display: inline-block;
+    width: 4.5%;
+    border: 5px solid #336797;
+    border-radius: 20%;
+    float: left;
+}
+
+.header{
+
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    padding: 10px 30px;
+    background: linear-gradient(#28537a, #1582d6, #35bee0) ;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+    
+}
+
+.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    float: left;
+    margin-top: 35px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.navbar a::before{
+
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    
+}
+
+.navbar a:hover::before{
+
+    width: 100%;
+}
+
+/* Login Reg Buttons */
+.header #profilephoto {
+
+  position: absolute;
+  top: -17.5%;
+  left: 90%;
+  width: 155px;
+  
+}
+
+.container{
+
+    position: absolute;
+    top:17%;
+    left: 25%;
+    width: 50vw; /* 50% of the viewport width */
+    height: 70vh; /* 60% of the viewport height */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "login";
+    box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%);
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+}
+
+.firsttxt{
+
+  position: absolute;
+  top: 5%;
+  left: 10%;  
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+
+}
+
+.summrycontainer{
+
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    width: 25vw; 
+    height: 21vh; 
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "login";
+    /* box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%); */
+    border: 2px dashed #7e9ffa;
+    border-radius: 20px;
+    background: whitesmoke;
+    overflow: hidden;
+}
+
+.summery{
+
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.secondtxt{
+
+  position: absolute;
+  top: 45%;
+  left: 10%;  
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+.changedate-Label{
+
+  position: absolute;
+  top: 53%;
+  left: 12%;  
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+
+input[type="date"]{
+  background-color: #7e9ffa;
+  padding: 8px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 48%;
+  color: #FFFFFF;
+  font-family: 'Poppins' sans-serif;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+input[type="date"]:hover{
+
+  background-color: #7e9ffa;
+  padding: 8px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 48%;
+  color: #FFFFFF;
+  font-family: 'Poppins' sans-serif;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  zoom: 110%;
+}
+
+
+::-webkit-calendar-picker-indicator {
+  /* This is the style for the calendar picker indicator */
+
+  background-color: #FFFFFF;
+  /* The background color of the indicator */
+
+  padding: 5px;
+  /* The padding around the indicator */
+
+  cursor: pointer;
+  /* The cursor style when hovering over the indicator */
+
+  border-radius: 3px;
+  /* The border radius of the indicator */
+}
+
+.change-vaccinecenter-Label{
+
+  position: absolute;
+  top: 63%;
+  left: 12%;  
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+.center-select{
+
+  position: absolute;
+  top: 63%;
+  left: 39%; 
+}
+
+.vaccinecenter-select{
+
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #7e9ffa;
+  color: white;
+  cursor: pointer;
+}
+
+.vaccinecenter-select:hover{
+
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #7e9ffa;
+  color: white;
+  zoom: 110%;
+}
+
+.center-option{
+
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: center;;
+}
+
+.change-vaccine-type-Label{
+
+  position: absolute;
+  top: 73%;
+  left: 12%;  
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+.vaccine-select{
+
+  position: absolute;
+  top: 73%;
+  left: 39%;
+}
+
+.vaccinetype-select{
+
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #7e9ffa;
+  color: white;
+  cursor: pointer;
+}
+
+.vaccinetype-select:hover{
+
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #7e9ffa;
+  color: white;
+  zoom: 110%;
+}
+
+.vaccine-option{
+
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+.change-appointment-btn{
+
+  position: absolute;
+  top: 85%;
+  left: 15%;
+}
+
+.change-appointment-button{
+
+    width: 300%;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(to right, #B9D1EB, #8eb3da, #F876DE);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.change-appointment-button:hover{
+
+    width: 300%;
+    padding: 15px;
+    color: white;
+    background: linear-gradient(to right, #B9D1EB, #8eb3da, #F876DE);
+    border: 2px solid #c594cf;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cancel-appontment-btn{
+
+  position: absolute;
+  top: 85%;
+  left: 45%;
+}
+
+.cancel-appointment-button{
+
+  width: 200%;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(to right, #B9D1EB, #8eb3da, #F876DE);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cancel-appointment-button:hover{
+
+  width: 200%;
+  padding: 15px;
+  color: white;
+  background: linear-gradient(to right, #B9D1EB, #8eb3da, #F876DE);
+  border: 2px solid #c594cf;
+  border-radius: 20px;
+  cursor: pointer;
+}
+/* Headtext */
+
+
+
+footer{
+  
+  width: 100%;
+  height: 7%;
+  position: absolute;
+  background: linear-gradient(#1676be, #28537a) ;;
+  bottom: 0;
+}
+
+p.footxt{
+  left: 7%;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 14px;
+  color: wheat;
+  position: absolute;
+}
+
+a.help{
+
+  margin-left: 1300px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: wheat;
+  position: relative;
+}
