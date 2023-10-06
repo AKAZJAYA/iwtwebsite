@@ -28,7 +28,7 @@
         <!-- Register Button -->
         <!-- <button type="button" id="register">Register</button> -->
     </header>
-
+    <form action="login.php" method="post">
     <!-- Login Form Container -->
     <div class="container">
         <!-- Design Elements -->
@@ -45,12 +45,12 @@
             <!-- Username Input -->
             <div class="text-input">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" required name="username">
             </div>
             <!-- Password Input -->
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" required name="password">
             </div>
             <!-- Login Button -->
             <button type="submit" class="login-btn">LOGIN</button>
@@ -64,6 +64,7 @@
                 <i class="ri-arrow-right-fill"></i>
             </div>
         </div>
+    </form>
     </div>
 
     <!-- Footer Section -->

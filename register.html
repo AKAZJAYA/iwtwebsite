@@ -44,48 +44,49 @@
             <!-- Registration form title -->
             <h3 class="title">Registration to the DoseGuardian</h3>
             <!-- Username input field -->
-            <form action="login.php" method="post">
+            <form action="register.php" method="post">
+
             <div class="text-input-username">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" name="username" >
             </div>
             <!-- Password input field -->
             <div class="text-input-password">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" name="password" >
             </div>
             <!-- Confirm Password input field -->
-            <div class="text-input-confirmpass">
+            <!-- <div class="text-input-confirmpass">
                 <i class="ri-user-fill"></i>
-                <input type="password" placeholder="Confirm Password" required>
-            </div>
+                <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+            </div> -->
             <!-- Full Name input field -->
             <div class="text-input-fullname">
                 <i class="ri-user-fill"></i>
-                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder="Full Name" name="fullname">
             </div>
             <!-- Gender selection radio buttons -->
             <div class="gender-select">
-                <input type="radio" name="gender" id="male" checked="checked">
+                <input type="radio" name="gender" id="male" checked="checked" value="m">
                 <label class="maleL" for="male">Male</label>
-                <input type="radio" name="gender" id="female" checked="checked">
+                <input type="radio" name="gender" id="female" checked="checked" value="f">
                 <label class="femaleL" for="female">Female</label>
             </div>
             <div class="dateofbirth">
                 
-                <input type="date" class="dateselect">
+                <input type="date" class="dateselect" name="date">
             </div>
             <div class="text-input-mobilenumber">
-                <input type="tel" maxlength="10" placeholder="Mobile Number">
+                <input type="tel" maxlength="10" placeholder="Mobile Number" name="mobilenumber">
             </div>
 
             <div class="text-input-address">
 
-                <input type="text" class="address" placeholder="Address">
+                <input type="text" class="address" placeholder="Address" name="address">
             </div>
 
             <div class="text-input-nicpass">
 
-                <input type="text" maxlength="12" class="nicpass" placeholder="NIC or Passport">
+                <input type="text" maxlength="12" class="nicpass" placeholder="NIC or Passport" name="number">
             </div>
             
             <div class="register-button">
