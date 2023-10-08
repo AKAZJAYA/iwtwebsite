@@ -1,6 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Define the document's character set and compatibility -->
+    <title>Login - DoseGuardian</title>
+    <!-- Set the page title and link to an external stylesheet -->
+    <link rel="stylesheet" href="styles/loginStyles.css">
+    <!-- Link to the stylesheet for login page -->
+    <script defer src="java/login.js"></script>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Logo and Navigation Bar -->
+        <img id="logo" src="images/logo1.jpeg">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="">News</a>
+            <a href="">About</a>
+            <a href="">Contact Us</a>
+        </nav>
+  
+        <!-- Register Button -->
+        <!-- <button type="button" id="register">Register</button> -->
+    </header>
+    <form action="login.php" method="post">
+    <!-- Login Form Container -->
+    <div class="container">
+        <!-- Design Elements -->
+        <div class="design">
+            <div class="pill-1 rotate-45"></div>
+            <div class="pill-2 rotate-45"></div>
+            <div class="pill-3 rotate-45"></div>
+            <div class="pill-4 rotate-45"></div>
+        </div>
+        <!-- Login Form -->
+        <div class="login">
+            <!-- Login Title -->
+            <h3 class="title">User Login</h3>
+            <!-- Username Input -->
+            <div class="text-input">
+                <i class="ri-user-fill"></i>
+                <input type="text" placeholder="Username" required name="username">
+            </div>
+            <!-- Password Input -->
+            <div class="text-input">
+                <i class="ri-lock-fill"></i>
+                <input type="password" placeholder="Password" required name="password">
+            </div>
+            <!-- Login Button -->
+            <button type="submit" class="login-btn">LOGIN</button>
+            <!-- Link to Registration -->
+            <a href="#" class="haveAcc">Don't you have an account?</a>
+            <!-- Register Button -->
+            <button type="button" id="reg-btn">REGISTER</button>
+            <!-- Create Account Section -->
+            <div class="create">
+                <!-- Arrow Icon -->
+                <i class="ri-arrow-right-fill"></i>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Copyright and Help Link -->
+        <p class="footxt">DoseGuardian © 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
+    </footer>
+</body>
+
+</html>
+
+
 <?php
 
-    include 'config.php';
+if(isset($_COOKIE['UID'])) {
+    echo('<script>window.location="userdboard.php"</script>');
+}
+
+
+    if (count($_POST) > 0) {
+        include 'config.php';
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -17,15 +102,17 @@
         $data = $stmt_result->fetch_assoc();
         if($data['password'] === $password){
 
-            echo "<script>alert ('Login Successfully....'); window.location='userdboard.html';</script>";
+            setcookie('UID', $username, time() + (86400), "/");
+            echo "<script>alert ('Login Successfully....'); window.location='userdboard.php';</script>";
         }
         else{
 
-            echo "<script>alert ('Invalid Email or Password..<br>Enter again...'); window.location='login.html';</script>";
+            echo "<script>alert ('Invalid Email or Password..<br>Enter again...'); window.location='login.php';</script>";
         }
     }
     else{
 
-        echo "<script>alert ('Invalid Email or Password..<br>Enter again...'); window.location='login.html';</script>";
+        echo "<script>alert ('Invalid Email or Password..<br>Enter again...'); window.location='login.php';</script>";
+    }
     }
 ?>

@@ -37,7 +37,7 @@ showSlides();
 // Login Button
 document.getElementById("login").onclick = function() {
     // Redirect to the login page when the login button is clicked
-    window.location.href = "login.html";
+    window.location.href = "login.php";
 }
 
 //Register Button

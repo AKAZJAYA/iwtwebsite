@@ -1,0 +1,321 @@
+/* Appointment Scheduling Page */
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsla(0, 0%, 100%, 0.938);
+    background-size: cover;
+    background-position: center;
+    /* font-family: sans-serif; */
+    overflow: hidden;
+    background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.75)), url("../images/vax2.webp");
+    background-repeat: no-repeat;
+    background-position: fixed;
+
+    
+}
+
+.header img{
+    display: inline-block;
+    width: 4.5%;
+    border: 5px solid #336797;
+    border-radius: 20%;
+    float: left;
+}
+
+.header{
+
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    padding: 10px 30px;
+    background: linear-gradient(#28537a, #1582d6, #35bee0) ;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+    
+}
+
+.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    float: left;
+    margin-top: 35px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.navbar a::before{
+
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    
+}
+
+.navbar a:hover::before{
+
+    width: 100%;
+}
+
+
+
+/* Headtext */
+
+.container{
+
+    position: absolute;
+    top:17%;
+    left: 17%;
+    width: 65vw; /* 50% of the viewport width */
+    height: 70vh; /* 60% of the viewport height */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "login";
+    box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%);
+    border-radius: 20px;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Content container with a relative positioning and a higher z-index */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.schedule-section{
+
+    position: absolute;
+    left: 5%;
+}
+
+/* Styling for the 'option' element */
+.option {
+    width: 300px;
+    height: 40px;
+    position: relative;
+    left: 85px;
+    top: 100px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5); */
+    background: #e6e6e6;
+}
+
+.option input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+/* Styling for the 'btn' button */
+#btn {
+    background-color: #1598cc;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    top: 200px;
+    right: 150px;
+    width: 170px;
+    height: 45px;
+    font-size: 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect for the 'btn' button */
+#btn:hover {
+    background-color: #5aceeb;
+    color: #021018;
+    transform: scale(1.1);
+}
+
+.notify-section{
+
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+/* Styling for the 'Notifications' button */
+#Notifications {
+    background-color: #123f5e;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 30px;
+    position: relative;
+    top: 320px;
+    left: 590px;
+    width: 190px;
+    height: 40px;
+    font-size: 19px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect for the 'Notifications' button */
+#Notifications:hover {
+    background-color: #5aceeb;
+    color: #021018;
+    transform: scale(1.1);
+}
+
+.support-section{
+
+    position: absolute;
+    top: 80%;
+    right: 17.5%;
+}
+
+/* Styling for the 'support' button */
+#support {
+    background-color: #123f5e;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 30px;
+    width: 190px;
+    height: 40px; 
+    font-size: 19px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect for the 'support' button */
+#support:hover {
+    background-color: #5aceeb;
+    color: #021018;
+    transform: scale(1.1);
+}
+
+/* .calsection{
+
+    position: absolute;
+    left: 5%;
+    bottom: 33%;
+} */
+
+   /* Styling for the calendar container */
+.calendar {
+    
+    position: absolute;
+    left: 5%;
+    bottom: 33%;
+    max-width: 400px;
+    margin-left: 680px; 
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	
+}
+
+.month {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+	left: 100px
+}
+
+/* Style for table header cells */
+.calendar-table th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Style for table cells */
+.calendar-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Style for today's date */
+.calendar-table td.today {
+    background-color: #ffdb4d;
+    font-weight: bold;
+}
+
+/* Style for past dates */
+.calendar-table td.past {
+    color: #ccc;
+}
+
+/* Style for upcoming dates */
+.calendar-table td.upcoming {
+    font-weight: bold;
+}
+
+/* Style for weekends (Saturdays and Sundays) */
+.calendar-table td.weekend {
+    background-color: #f7f7f7;
+}
+
+/* Style for event dates (if applicable) */
+.calendar-table td.event {
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+}
+
+footer{
+  
+  width: 100%;
+  height: 7%;
+  position: fixed;
+  background: linear-gradient(#1676be, #28537a) ;
+  bottom: 0;
+}
+
+p.footxt{
+  left: 7%;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 14px;
+  color: wheat;
+  position: absolute;
+}
+
+a.help{
+
+  margin-left: 1300px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: wheat;
+  position: relative;
+}

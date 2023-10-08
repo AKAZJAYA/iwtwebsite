@@ -23,7 +23,7 @@
     
     if($stmt->execute()){
 
-        echo "<script>alert ('Thank you for registered. Now you can Login'); window.location='login.html';</script>.";
+        echo "<script>alert ('Thank you for registered. Now you can Login'); window.location='login.php';</script>.";
     }
     else{
 
