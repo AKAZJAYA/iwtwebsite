@@ -1,5 +1,22 @@
 <!-- Appointment Scheduling Page -->
 
+<?php
+
+include 'config.php';
+
+    $UID = $_COOKIE['UID'];
+
+$sql = "SELECT * FROM appointment WHERE userName = '".$UID."'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo('<script>alert("You already have an appointment scheduled.."); window.location="userdboard.php"</script>');
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +33,12 @@
       <img id="logo" src="images/logo1.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
-          <a href="">News</a>
-          <a href="">About</a>
-          <a href="">Contact Us</a>
+          <a href="./news.html">News</a>
+          <a href="./about.html">About</a>
+          <a href="./contactUs.php">Contact Us</a>
       </nav>
+      <p class="header_username" id="header_username"><?php  echo($_COOKIE['UID']); ?></p>
+      <img src="./images/profileP-removebg-preview.png" alt="" class="profilephoto">
 
       
   </header>
@@ -34,12 +53,12 @@
         <!-- First dropdown for selecting a center -->
         <select class="option" name="vaccneCenter" required>
             <option selected disabled>Select a Center</option>
-            <option value="">Moratuwa</option>
-            <option value="">Galle</option>
-            <option value="">Kandy</option>
-            <option value="">Kurunegala</option>
-            <option value="">Ratnapura</option>
-            <option value="">Badulla</option>
+            <option>Moratuwa</option>
+            <option>Galle</option>
+            <option>Kandy</option>
+            <option>Kurunegala</option>
+            <option>Ratnapura</option>
+            <option>Badulla</option>
         </select>
         <br><br><br>
 
@@ -61,8 +80,10 @@
         <input type="time" name="time" class="option">
 
         <!-- Continue button -->
-        <input type="submit" id="btn" name="continueBtn" value="Continue">
+        <input type="submit" id="btn" name="continueBtn" value="Confirm">
         </form>
+
+        <a href="./userdboard.php"><input type="button" class="btn-cancel" name="cancel" value="Cancel"></a>
     </div>
 
     <!-- Allow Notifications button -->
@@ -110,7 +131,7 @@
 
        
       <footer>
-        <p class="footxt">DoseGuardian c 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
+        <p class="footxt">DoseGuardian © 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
       </footer>
 
       
@@ -125,28 +146,34 @@
 
     include 'config.php';
 
-    $vaccneCenter = $_POST['vaccneCenter'];
-    $vaccineType = $_POST['vaccineType'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
+    $UID = $_COOKIE['UID'];
 
-    //database connection
-    // $conn = new mysqli('localhost:3306','root','','onlinevaccinationportal');
+    if (isset($_POST['vaccneCenter']) AND isset($_POST['vaccineType']) AND isset($_POST['date']) AND isset($_POST['time'])) {
+        $vaccneCenter = $_POST['vaccneCenter'];
+        $vaccineType = $_POST['vaccineType'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
 
-    $sql = "insert into appointment(center, vaccineType, date, time) values (?, ?, ?, ?)";
+        //database connection
+        // $conn = new mysqli('localhost:3306','root','','onlinevaccinationportal');
 
-    $stmt = $conn->prepare($sql);
+        $sql = "insert into appointment(userName, center, vaccineType, date, time) values (?, ?, ?, ?, ?)";
 
-    $stmt->bind_param("ssss",$vaccneCenter,$vaccineType,$date,$time);
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param("sssss",$UID, $vaccneCenter,$vaccineType,$date,$time);
+        
+        if($stmt->execute()){
+
+            echo "<script>alert ('Appointment scheduled successfully...'); window.location='userdboard.php';</script>.";
+        }
+        else{
+
+            echo 'Unsuccessfull...';
+        }
     
-    if($stmt->execute()){
-
-        echo "<script>alert ('Appointment scheduled successfully...'); window.location='userdboard.php';</script>.";
     }
-    else{
 
-        echo 'Unsuccessfull...';
-    }
     
 
 ?>

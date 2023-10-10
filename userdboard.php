@@ -16,9 +16,9 @@
       <img id="logo" src="images/logo1.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
-          <a href="">News</a>
-          <a href="">About</a>
-          <a href="">Contact Us</a>
+          <a href="./news.html">News</a>
+          <a href="./about.html">About</a>
+          <a href="./contactUs.php">Contact Us</a>
       </nav>
       <p class="header_username" id="header_username"><?php  echo($_COOKIE['UID']); ?></p>
       <img src="./images/profileP-removebg-preview.png" alt="" class="profilephoto">
@@ -38,18 +38,18 @@
 	<div>
   <a href="./appointment.php"><button type="button"><span></span>Schedule appointment</button></a>
 		<a href="./changeAppointment.php"><button type="button"><span></span>Change appointment </button></a>
-		<a href="./vaccineInformation.html"><button type="button"><span></span>Vaccination information</button></a>
+		<a href="./vaccineInformation.php"><button type="button"><span></span>Vaccination information</button></a>
    
 	</div>
   
 </div>
 <div class="profile-btn">
-  <input type="button" id="profile-button" value="Profile">
+  <a href="./useraccount.php"><input type="button" id="profile-button" value="Profile"></a>
 </div>
 
 
       <footer>
-        <p class="footxt">DoseGuardian c 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
+        <p class="footxt">DoseGuardian © 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
       </footer>
 
       <script>

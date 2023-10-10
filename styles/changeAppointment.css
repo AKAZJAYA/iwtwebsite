@@ -22,6 +22,25 @@ body{
     
 }
 
+.header_username{
+  display: inline-block;
+  position: relative;
+  float: right;
+  vertical-align: top;
+  margin-top: 3.5vh;
+  margin-right: 180px;
+  font-size: 1.3rem;
+  color: white;
+}
+
+/* .profilephoto {
+  position: absolute;
+  right: 6%;
+  top: -20%;
+  width: 155px;
+  border: none;
+} */
+
 .heading{
   /* position: relative; */
   margin-top: 200px;

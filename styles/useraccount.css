@@ -1,0 +1,500 @@
+
+/* Home Page CSS */
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height:100vh;
+    background-color: hsla(0, 0%, 100%, 0.938);
+    background-size: cover;
+    background-position: center;
+    /* font-family: sans-serif; */
+    overflow: hidden;   
+}
+
+.header_username{
+  display: inline-block;
+  position: relative;
+  float: right;
+  vertical-align: top;
+  margin-top: 3.5vh;
+  margin-right: 13vw;
+  font-size: 1.3rem;
+  color: white;
+  
+}
+
+.profilephoto {
+  position: absolute;
+  right: 6%;
+  top: -20%;
+  width: 155px;
+  border: none;
+}
+
+.background-image{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.55)), url('../images/e.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9; /* Adjust the opacity as needed */
+  z-index: -1; 
+}
+.content{
+  position: relative;
+  z-index: 1; /* Place the content on top of the background */
+}
+
+
+.sect{
+
+    width: 65vw; /* 50% of the viewport width */
+    height: 70vh; /* 60% of the viewport height */
+    position: absolute;
+    top: 15%;
+    left: 17%;
+    box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%);
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+	background:transparent;
+	backdrop-filter:blur(10px);
+}
+
+.info{
+
+  position: absolute;
+  top: -15%;
+  left: -8%;
+  
+}
+ #name::placeholder {
+        color: rgb(0, 0, 0);
+    }
+ #oldpw::placeholder {
+        color: rgb(0, 0, 0);
+    }
+ #newpass::placeholder {
+        color: rgb(0, 0, 0);
+    }
+ #conpass::placeholder {
+        color: rgb(0, 0, 0);
+    }
+ #email::placeholder {
+        color: rgb(0, 0, 0);
+    }
+ #number::placeholder {
+        color: rgb(0, 0, 0);
+    }
+ #add::placeholder {
+        color: rgb(0, 0, 0);
+    }
+
+
+#topic{
+	margin-top:200px;   
+}
+
+#userinfo{
+	margin-left:270px;
+	font-size:25px;   /*topic user information*/
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+#changepw{
+	margin-left:485px;
+	font-size:25px;   /*topic change password*/
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+
+#container{
+	margin-top:10px;  /*contains fullname and old password */
+}
+#name{
+	margin-left:270px;
+	height:30px;
+	width:200px;    /*full name text box*/
+	font-size:20px;
+	color:rgb(51, 51, 51);
+	border-radius: 10px;
+	
+}
+#oldpw{
+	margin-left:487px;
+	height:30px;   /* oldpassword input*/
+	width:200px;
+	color:rgb(51, 51, 51);
+	font-size:20px;
+	border-radius: 10px;
+}
+
+
+#container1{
+	margin-top:10px;  /*contains date of birth and new password*/
+}
+
+#dob{
+	margin-left:270px;  /*date of birth text*/
+	font-size:20px;
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+#bdate{
+	
+	margin-left:270px;
+	height:30px;   /*date of birth input*/
+	width:200px;
+	color:rgb(51, 51, 51);
+	font-size:20px;
+	border-radius: 10px;
+}
+#newpass{
+	
+	margin-left:487px;
+	height:30px;   /* new password input*/
+	width:200px;
+	color:rgb(51, 51, 51);
+	font-size:20px;
+	border-radius: 10px;
+}
+
+#container2{
+	margin-top:10px; /*contain dropdownbox and confirm password*/
+}
+#gen{
+	margin-left:270px;  /*gender text*/
+	font-size:20px;
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+#gender{
+	margin-left:270px;
+	height:30px;   /*gender input*/
+	width:200px;
+	color:rgb(51, 51, 51);
+	font-size:20px;
+	border-radius: 10px;
+}
+#conpass{
+	margin-left:487px;
+	height:30px;   /* confirm password input*/
+	width:200px;
+	color:rgb(51, 51, 51);
+	font-size:20px;
+	border-radius: 10px;
+}
+#container3{
+	margin-top:20px;
+}
+
+#contact{
+	margin-left:270px;
+	font-size:25px;   /*contact information*/
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+#profile{
+	margin-left:460px;
+	font-size:25px;   /*profile picture*/
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+
+#email{
+	margin-top:15px;
+	margin-left:270px;
+	height:30px;
+	width:200px;    /*full name text box*/
+	font-size:20px;
+	color:rgb(51, 51, 51);
+	border-radius: 10px;
+}
+#image{
+	margin-left:494px;  /*image input*/
+}
+#number{
+	margin-top:10px;
+	margin-left:270px;
+	height:30px;
+	width:200px;    /*mobile number text box*/
+	font-size:20px;
+	color:rgb(51, 51, 51);
+	border-radius: 10px;
+}
+
+#delete{
+	margin-left:496px;
+	font-size:25px;   /* account deletion*/
+	color:rgb(51, 51, 51);
+	font-weight: 600;
+}
+#add{
+	margin-top:10px;
+	margin-left:270px;
+	height:30px;
+	width:200px;    /*address text box*/
+	font-size:20px;
+	color:rgb(51, 51, 51)C;
+	border-radius: 10px;     
+}
+#deleteaccount{
+	
+  margin-left:510px;
+  background: #C60C29;
+  box-shadow: #C60C29 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;    /*delete account button*/
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+   
+}
+#deleteaccount:hover {
+  background: #C60C29;
+  color: white;
+  border: 2px solid #C60C29;    /*delete account button*/
+  border-radius: 10px;
+}
+#subbutton {
+  margin-left:680px;
+  margin-top:30px;
+  background: #0a95ff;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;    /*save changes button*/
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+  
+}
+
+#subbutton:hover {
+   background: #0074cc;
+  color: white;
+  border: 2px solid #1b5996;    /*save changes button*/
+  border-radius: 10px;
+}
+
+.updatePassword-btn{
+
+  position: absolute;
+  left: 83%;
+  top: 65%;
+  /* margin-left:680px;
+  margin-top:30px; */
+  background: #0a95ff;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;    /*save changes button*/
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+}
+
+
+
+
+
+#logo{
+    display: inline-block;
+    width: 4.5%;
+    border: 5px solid #336797;
+    border-radius: 20%;
+    float: left;
+}
+
+.header{
+
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    padding: 10px 30px;
+    background: linear-gradient(#28537a, #1582d6, #35bee0) ;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+    
+}
+
+.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    float: left;
+    margin-top: 35px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.navbar a::before{
+
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    
+}
+
+.navbar a:hover::before{
+
+    width: 100%;
+}
+
+/* Login Reg Buttons */
+
+#register {
+  background: #0a95ff;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 5px;
+    float: right;
+}
+
+#register:hover{
+  background: #0074cc;
+  color: white;
+  border: 2px solid #1b5996;
+  border-radius: 10px;
+}
+
+#login {
+  background: #e1ecf4;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #6291b3;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+    margin-top: 30px;
+    float: right;
+}
+
+#login:hover{
+  background: #b3d3ea;
+  color: #6291b3;
+  border: 2px solid #1b5996;
+  border-radius: 10px;
+}
+
+
+
+/* Headtext */
+
+
+
+footer{
+  
+  width: 100%;
+  height: 7%;
+  position: absolute;
+  background: linear-gradient(#1676be, #28537a) ;
+  bottom: 0;
+  position:fixed;
+}
+
+p.footxt{
+  left: 7%;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 14px;
+  color: wheat;
+  position: absolute;
+}
+
+a.help{
+
+  margin-left: 1300px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: wheat;
+  position: relative;
+}
+

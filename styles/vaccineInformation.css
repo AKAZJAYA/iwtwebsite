@@ -32,6 +32,17 @@ body {
   border: none;
 }
 
+.header_username{
+    display: inline-block;
+    position: relative;
+    float: right;
+    vertical-align: top;
+    margin-top: 3.5vh;
+    margin-right: 250px;
+    font-size: 1.3rem;
+    color: white;
+  }
+
 .header {
     position: fixed;
     top: 0;

@@ -1,0 +1,183 @@
+
+
+/* Home Page CSS */
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsla(0, 0%, 100%, 0.938);
+    background-image: linear-gradient(rgba(0,0,0,0.20),rgba(0,0,0,0.75)), url(../images/contact-backimg.jpeg);
+    background-size: cover;
+    background-position: center;
+    /* font-family: sans-serif; */
+    overflow: hidden;
+    
+}
+
+.header_username{
+    display: inline-block;
+    position: relative;
+    float: right;
+    vertical-align: top;
+    margin-top: 3.5vh;
+    margin-right: 180px;
+    font-size: 1.3rem;
+    color: white;
+  }
+.heading{
+  /* position: relative; */
+  margin-top: 200px;
+  text-align: center;
+}
+
+.header .logo{
+    display: inline-block;
+    width: 4.5%;
+    border: 5px solid #336797;
+    border-radius: 20%;
+    float: left;
+}
+
+.header{
+
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    padding: 10px 30px;
+    background: linear-gradient(#28537a, #1582d6, #35bee0) ;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+    
+}
+
+.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    float: left;
+    margin-top: 35px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.navbar a::before{
+
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    
+}
+
+.navbar a:hover::before{
+
+    width: 100%;
+}
+
+
+
+/* Headtext */
+.header #profilephoto {
+
+    position: absolute;
+    top: -17.5%;
+    left: 90%;
+    width: 155px;
+    
+}
+
+/* Contact form styles */
+.contact-form {
+    max-width: 600px;
+    margin: 150px auto;
+    background:linear-gradient(#026fd4, #1582d6, #35bee0) ;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: rgb(66, 57, 53);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+
+
+footer{
+  
+  width: 100%;
+  height: 7%;
+  position: absolute;
+  background: linear-gradient(#1676be, #28537a) ;;
+  bottom: 0;
+}
+
+p.footxt{
+  left: 7%;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 14px;
+  color: wheat;
+  position: absolute;
+}
+
+a.help{
+
+  margin-left: 1300px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: wheat;
+  position: relative;
+}

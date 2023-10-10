@@ -48,11 +48,11 @@ include 'config.php';
       <img id="logo" src="images/logo1.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
-          <a href="">News</a>
-          <a href="">About</a>
-          <a href="">Contact Us</a>
+          <a href="./news.html">News</a>
+          <a href="./about.html">About</a>
+          <a href="./contactUs.html">Contact Us</a>
       </nav>
-
+      <p class="header_username" id="header_username"><?php  echo($_COOKIE['UID']); ?></p>
       <img src="images/profileP-removebg-preview.png" alt="" id="profilephoto">
   </header>
 
@@ -67,7 +67,7 @@ include 'config.php';
         <label for="" class="appointIDLabel"><?php echo($AID) ?></label><br><br>
         <label for="" class="dateandtime">Date :  </label>
         <label for="" class="dateLabel"><?php echo($date) ?></label><br><br>
-        <label for="" class="dateandtime">Time:  </label>
+        <label for="" class="dateandtime">Time:  </label>profilere
         <label for="" class="Label"><?php echo($time) ?></label><br><br>
         <label for="" class="vaccinationtype">Vaccination Type: </label>
         <label for="" class="vaccineTypeLabel"><?php echo($vaccineType) ?></label><br><br>
@@ -84,18 +84,18 @@ include 'config.php';
 
       <label for="" class="changedate-Label">Change Date: </label>
       <div class="date-select">
-        <input type="date" class="dateselect" required name="date">
+        <input type="date" class="dateselect"  name="date">
       </div>
 
       <label for="" class="changetime-Label">Change Date: </label>
       <div class="time-select">
-        <input type="time" class="timeselect" required name="time">
+        <input type="time" class="timeselect"  name="time">
       </div>
 
       <label for="" class="change-vaccinecenter-Label">Change Vaccination Center: </label>
       <div class="center-select">
 
-        <select name="vaccinecenter" class="vaccinecenter-select" required>
+        <select name="vaccinecenter" class="vaccinecenter-select" >
           <option class="center-option" value="center1">Select Center</option>
           <option class="center-option" value="center1">Center 1</option>
           <option class="center-option" value="center2">Center 2</option>
@@ -107,7 +107,7 @@ include 'config.php';
       <label for="" class="change-vaccine-type-Label">Change Vaccine Type: </label>
       <div class="vaccine-select">
 
-        <select name="vaccinetype" class="vaccinetype-select" required>
+        <select name="vaccinetype" class="vaccinetype-select" >
           <option class="center-option" value="center1">Select Vaccine</option>
           <option class="vaccine-option" value="center1">Vaccine 1</option>
           <option class="vaccine-option" value="center2">Vaccine 2</option>
@@ -119,24 +119,24 @@ include 'config.php';
 
     <div class="change-appointment-btn">
 
-      <input type="submit" value="Change" class="change-appointment-button">
+      <input type="submit" value="Change" class="change-appointment-button" name="changeAppointment-btn">
     </div>
 
     <div class="delete-appontment-btn">
 
-      <input type="submit" value="Delete Appointment" class="delete-appointment-button">
+      <input type="submit" value="Cancel Appointment" class="delete-appointment-button" name="cancleAppointment" onclick="return confirm('Are you sure you want to delete your appointment ?');">
     </div>
     </form>
 
-    <div class="cancel-appontment-btn">
+    <!-- <div class="cancel-appontment-btn">
 
       <a href="userdboard.php"><button type="button" value="Cancel Appointment" class="cancel-appointment-button">Cancel Appointment</button></a>
-    </div>
+    </div> -->
   </section>
 
 
       <footer>
-        <p class="footxt">DoseGuardian c 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
+        <p class="footxt">DoseGuardian © 2023 <a class="help" href="./faq.html">Help and Support</a><br>The Vaccination Management System</p>
       </footer>
 
       
@@ -149,7 +149,8 @@ include 'config.php';
 
 <?php 
 
-if ($_POST['date'] != []) {
+
+if (isset($_POST['date']) AND isset($_POST['time']) AND isset($_POST['vaccinecenter']) AND isset($_POST['vaccinetype']) AND isset($_POST['changeAppointment-btn'])) {
   $date = $_POST['date'];
   $time = $_POST['time'];
   $vaccinecenter = $_POST['vaccinecenter'];
@@ -164,6 +165,20 @@ if ($_POST['date'] != []) {
  }else {
    echo('Failed');
  }
+}
+
+if(isset($_POST['cancleAppointment'])){
+
+	$sql = "DELETE FROM appointment WHERE userName = '".$UID."'";
+	$result = mysqli_query($conn, $sql);
+
+	if($result){
+
+		echo('<script>window.location="userdboard.php";
+					alert("Your appointment canceled successfully...");
+					
+				</script>');
+	}
 }
 
 ?>
