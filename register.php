@@ -11,15 +11,16 @@
     $mobilenumber = $_POST['mobilenumber'];
     $address = $_POST['address'];
     $number = $_POST['number'];
+    $userType = "user";
 
     //database connection
     // $conn = new mysqli('localhost:3306','root','','onlinevaccinationportal');
 
-    $query = "insert into ragistration(userName, password, fullName, birthday, gender, mobileNumber, address, NICNumber) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    $query = "insert into ragistration(userName, password, fullName, birthday, gender, mobileNumber, address, NICNumber, userType) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($query);
 
-    $stmt->bind_param("sssssisi",$username,$password,$fullname,$date,$gender,$mobilenumber,$address,$number);
+    $stmt->bind_param("sssssisis",$username,$password,$fullname,$date,$gender,$mobilenumber,$address,$number,$userType);
     
     if($stmt->execute()){
 

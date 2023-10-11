@@ -108,7 +108,8 @@ body{
 /* Contact form styles */
 .contact-form {
     max-width: 600px;
-    margin: 150px auto;
+    margin-left: 200px;
+    margin-top: 150px;
     background:linear-gradient(#026fd4, #1582d6, #35bee0) ;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -152,7 +153,50 @@ body{
     background-color: #333;
 }
 
+.replaysection{
 
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    min-height: 300px;
+    height: 400px;
+    width: 30%;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+#inquiryList{
+
+    display: flex;
+  position: relative;
+  padding: 10px 10px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+}
+
+.nameTag{
+    display: inline-block;
+    position: relative;
+    padding: 10px 10px;
+    background-color: rgb(92, 94, 95);
+    color: white;
+    border-radius: 10px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+  }
+
+#reply{
+
+    position: absolute;
+    top: 30%;
+    min-height: 300px;
+    height: 400px;
+    width: 40%;
+    padding: 10px;
+}
 
 footer{
   

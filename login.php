@@ -20,9 +20,9 @@
         <img id="logo" src="images/logo1.jpeg">
         <nav class="navbar">
             <a href="index.html">Home</a>
-            <a href="">News</a>
-            <a href="">About</a>
-            <a href="">Contact Us</a>
+            <a href="./news.html">News</a>
+            <a href="./about.html">About</a>
+            <a href="./contactUs.php">Contact Us</a>
         </nav>
   
         <!-- Register Button -->
@@ -103,7 +103,12 @@ if(isset($_COOKIE['UID'])) {
         if($data['password'] === $password){
 
             setcookie('UID', $username, time() + (86400), "/");
-            echo "<script>alert ('Login Successfully....'); window.location='userdboard.php';</script>";
+            if($username != "admin"){
+                echo "<script>alert ('Login Successfully....'); window.location='userdboard.php';</script>";
+            }
+            else{
+                echo "<script>alert ('Logged as an Admin....'); window.location='admin.php';</script>";
+            }
         }
         else{
 

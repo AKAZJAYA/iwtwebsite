@@ -3,7 +3,7 @@ include 'config.php';
   $UID = $_COOKIE['UID'];
   // echo($UID);
   if ($UID == null) {
-   echo('<script>window.location="login.html"</script>');
+   echo('<script>window.location="login.php"</script>');
   }
 
   $AID = "no";

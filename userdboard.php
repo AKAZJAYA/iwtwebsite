@@ -67,6 +67,9 @@
 <?php 
 include 'config.php';
   $UID = $_COOKIE['UID'];
+  if ($UID == 'admin') {
+    echo "<script>window.location='admin.php';</script>";
+  }
   // echo($UID);
   if ($UID == null) {
    echo('<script>window.location="login.php"</script>');
