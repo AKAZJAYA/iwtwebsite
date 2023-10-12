@@ -35,7 +35,7 @@
             
             <a href="./adminUserDetails.php"><button class="userDetails">User Details</button></a>
             <button class="AppointmentDetails">Appointment Details</button>
-            <button class="Inquiries">Inquiries</button>
+            <a href="./adminInquiryReply.php"><button class="Inquiries">Inquiries</button></a>
           </div>
           
 

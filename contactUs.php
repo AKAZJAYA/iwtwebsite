@@ -122,11 +122,12 @@ include 'config.php';
 if(isset($_POST['email']) AND isset($_POST['message'])){
     $email = $_POST['email'];
     $message = $_POST['message'];
+    $status = "pending";
 
-    $query = "insert into inquiries(userName, email, inquiry) values (?, ?, ?)";
+    $query = "insert into inquiries(userName, email, inquiry,Status) values (?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
 
-    $stmt->bind_param("sss",$UID,$email,$message);
+    $stmt->bind_param("ssss",$UID,$email,$message,$status);
 
     if($stmt->execute()){
 

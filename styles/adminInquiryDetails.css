@@ -1,0 +1,221 @@
+
+
+/* Home Page CSS */
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsla(0, 0%, 100%, 0.938);
+    background-size: cover;
+    background-position: center;
+    /* font-family: sans-serif; */
+    overflow: hidden;
+    
+}
+
+.heading{
+  /* position: relative; */
+  margin-top: 200px;
+  text-align: center;
+}
+
+.header .logo{
+    display: inline-block;
+    width: 4.5%;
+    border: 5px solid #336797;
+    border-radius: 20%;
+    float: left;
+}
+
+.header{
+
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    padding: 10px 30px;
+    background: linear-gradient(#28537a, #1582d6, #35bee0) ;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+    
+}
+
+.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    float: left;
+    margin-top: 35px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+.navbar a::before{
+
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    
+}
+
+.navbar a:hover::before{
+
+    width: 100%;
+}
+
+
+
+/* Headtext */
+.header #profilephoto {
+
+    position: absolute;
+    top: -17.5%;
+    left: 90%;
+    width: 155px;
+    
+}
+
+
+.replydiv{
+
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    min-height: 300px;
+    height: 500px;
+    width: 50%;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+.inquiryList{
+
+    display: flex;
+  position: relative;
+  padding: 10px 10px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.nameTag{
+    display: inline-block;
+    position: relative;
+    padding: 10px 10px;
+    background-color: rgb(92, 94, 95);
+    color: white;
+    border-radius: 10px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+  }
+
+#reply{
+
+    position: absolute;
+    top: 30%;
+    min-height: 300px;
+    height: 400px;
+    width: 40%;
+    padding: 10px;
+}
+
+#inquiry{
+
+    position: relative;
+    display: flex;
+    padding-top: 20px;
+}
+
+.adminReply{
+
+    margin-top: 180px;
+    position: relative;
+    display: block;
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#submit-btn {
+    background: #0a95ff;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    border-radius: 10px;
+   
+}
+
+/* Style for Registration Button on hover */
+#submit-btn:hover {
+    background: #0074cc;
+    color: white;
+    border: 2px solid #1b5996;
+    border-radius: 10px;
+}
+
+
+
+footer{
+  
+  width: 100%;
+  height: 7%;
+  position: absolute;
+  background: linear-gradient(#1676be, #28537a) ;;
+  bottom: 0;
+}
+
+p.footxt{
+  left: 7%;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 14px;
+  color: wheat;
+  position: absolute;
+}
+
+a.help{
+
+  margin-left: 1300px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: wheat;
+  position: relative;
+}
