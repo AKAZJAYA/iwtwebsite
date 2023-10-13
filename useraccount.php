@@ -93,7 +93,7 @@
 	<div id="container2"> <!--contains dropdown box and confirm password--> 
 		<span>
             <label for="ge" id="gen">Gender</label><br><!--gender text-->
-				<select id="gender" name="gender">
+				<select id="gender" name="gender" disabled>
 					<option value="male">Male</option> <!--gender dropdown box-->
 					<option value="female">Female</option>
 					<option value="other">Other</option>
@@ -126,7 +126,7 @@
 	
 	<div id ="container5"> <!--Contains mobile number, account deletion heading-->
 		<span>
-			<input name="mobileNumber" type="text" id="number"  placeholder="Mobile number" value="<?php echo $mobileNumber ?>"> <!--mobile number text box-->
+			<input name="mobileNumber" type="text" id="number" maxlength="10"  placeholder="Mobile number" value="<?php echo $mobileNumber ?>"> <!--mobile number text box-->
 		</span>
 		<span id="delete">Account deletion</span> <!--Account deletion heading-->
 	</div>

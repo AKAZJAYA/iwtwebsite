@@ -188,6 +188,18 @@ body{
     cursor: pointer;
   }
 
+  #inquiry{
+
+    position: absolute;
+    top: 30%;
+    min-height: 300px;
+    height: 400px;
+    width: 40%;
+    padding: 10px;
+    font-size: 15px;
+    /* overflow: scroll; */
+  }
+
 #reply{
 
     position: absolute;
@@ -196,6 +208,13 @@ body{
     height: 400px;
     width: 40%;
     padding: 10px;
+}
+
+#replyHeader{
+
+    position: relative;
+    display: block;
+    top: 10%;
 }
 
 footer{

@@ -62,7 +62,9 @@ $UID = $_COOKIE['UID'];
 
     <h3>Inquiries</h3>
     <div id="inquiryList"></div>
-    <div id="reply"></div>
+    <div id="inquiry"></div><br><br><br><br><br><br>
+    <h3 id="replyHeader">Reply</h3>
+    <div id="replyByAdmin"></div>
   </div>
 
 </div>
@@ -79,7 +81,7 @@ $UID = $_COOKIE['UID'];
 include 'config.php';
   $UID = $_COOKIE['UID'];
 
-  $sql = "SELECT * FROM inquiries";
+  $sql = "SELECT * FROM inquiries WHERE userName = '".$UID."' ORDER BY referenceNumber DESC";
   $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -88,21 +90,41 @@ include 'config.php';
       $username =  $row["userName"];
       $refID = $row["referenceNumber"];
       $inquiry = $row["inquiry"];
-      if($username == $UID){
-        // echo ($username."<br>");
-        echo ('<script>
-          var parent = document.getElementById("inquiryList");
-          var child = document.createElement("div");
-          child.classList.add("nameTag");
-          child.innerHTML = "'.$refID.'";
-          child.id = "nameTag"+"'.$refID.'";
-          var elementId = "'."nameTag".$refID.'";
-          parent.appendChild(child);
-          child.addEventListener("click", function (){
-            document.getElementById("reply").innerHTML =  "'.$inquiry.'";
+      $reply = $row["reply"];
+      $status = $row["Status"];
+      if($status == 'pending'){
+      // echo ($username."<br>");
+      echo ('<script>
+        var parent = document.getElementById("inquiryList");
+        var child = document.createElement("div");
+        child.classList.add("nameTag");
+        child.innerHTML = "'.$refID.'";
+        child.id = "nameTag"+"'.$refID.'";
+        var elementId = "'."nameTag".$refID.'";
+        parent.appendChild(child);
+        child.addEventListener("click", function (){
+          document.getElementById("inquiry").innerHTML =  "'.$inquiry.'";
+          document.getElementById("replyByAdmin").innerHTML =  "'.$reply.'";
 
-          });
-        </script>');
+        });
+      </script>');
+      }
+      else{
+        echo ('<script>
+        var parent = document.getElementById("inquiryList");
+        var child = document.createElement("div");
+        child.classList.add("nameTag");
+        child.innerHTML = "'.$refID.'";
+        child.id = "nameTag"+"'.$refID.'";
+        child.style.backgroundColor = "green";
+        var elementId = "'."nameTag".$refID.'";
+        parent.appendChild(child);
+        child.addEventListener("click", function (){
+          document.getElementById("inquiry").innerHTML =  "'.$inquiry.'";
+          document.getElementById("replyByAdmin").innerHTML =  "'.$reply.'";
+
+        });
+      </script>');
       }
     }
   }

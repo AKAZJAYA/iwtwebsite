@@ -49,6 +49,7 @@
        <form action="adminInquiryReply.php" method="POST">
 
         <input type="text" name="adminReply" id="adminReply" class="adminReply">
+        <input style="display:none" type="text" name="inquiryNum" id="inquiryNum">
         <input type="submit" name="submit-btn" id="submit-btn" class="submit-btn" value="Send">
        </form>
        </div>
@@ -87,6 +88,7 @@
           var elementId = "'."nameTag".$refID.'";
           parent.appendChild(child);
           child.addEventListener("click", function (){
+            document.getElementById("inquiryNum").value =  "'.$refID.'";
             document.getElementById("inquiry").innerHTML =  "'.$inquiry.'";
           });
         </script>');
@@ -101,12 +103,12 @@
 <?php
     include 'config.php';
 
-  if(isset($_POST['adminReply'])){
+  if(isset($_POST['adminReply']) AND isset($_POST['inquiryNum']) AND isset($_POST['submit-btn'])){
 
     $adminReply = $_POST['adminReply'];
-    $Status = "Replyed";
+    $inquiryNum = $_POST['inquiryNum'];
 
-    $query = "UPDATE inquiries SET reply = '".$adminReply."', Status = '".$Status."' WHERE referenceNumber = '".$refID."'";
+    $query = "UPDATE inquiries SET reply = '".$adminReply."', Status = 'Replyed' WHERE referenceNumber = '".$inquiryNum."'";
     if(mysqli_query($conn, $query)){
         echo('Success');
         echo('<script>window.location="adminInquiryReply.php";

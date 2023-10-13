@@ -20,7 +20,7 @@
           <a href="./about.html">About</a>
           <a href="./contactUs.php">Contact Us</a>
       </nav>
-      <p class="header_username" id="header_username"><?php  echo($_COOKIE['UID']); ?></p>
+      <p class="header_username" id="header_username">Welcome <?php  echo($_COOKIE['UID']); ?></p>
       <img src="./images/profileP-removebg-preview.png" alt="" class="profilephoto">
 
       <div class="logout-btn">

@@ -35,11 +35,13 @@
     <div class="UserInfoListUsers" id="UserInfoListUsers">
       <h3>Users</h3>
       <div id="UserInfoListUsersList"></div>
-      <form action="./adminUserDetails.php" method="post">
+      <form action="./adminUserDetails.php" method="POST">
         <table>
           <tr>
             <td>Username</td>
-            <td><input type="text" id="usernameInput" name="usernameInput" disabled></td>
+            <td><input style="display: none;" type="text" id="usernameInput" name="usernameInput">
+                <input type="text" id="usernameInputDisplay" disabled>
+          </td>
           </tr>
           <tr>
             <td>Full Name</td>
@@ -59,7 +61,7 @@
           </tr>
           <tr>
             <td>NIC Number</td>
-            <td><input type="number" id="NICNumberInput" name="NICNumberInput"></td>
+            <td><input type="text" maxlength="12" id="NICNumberInput" name="NICNumberInput"></td>
           </tr>
           <tr>
             <td></td>
@@ -101,6 +103,7 @@
           parent.appendChild(child);
           child.addEventListener("click", function (){
             document.getElementById("usernameInput").value =  "'.$username.'";
+            document.getElementById("usernameInputDisplay").value =  "'.$username.'";
             document.getElementById("fullNameInput").value =  "'.$row['fullName'].'";
             document.getElementById("birthdayInput").value =  "'.$row['birthday'].'";
             document.getElementById("mobileNumInput").value =  "'.$row['mobileNumber'].'";
@@ -125,6 +128,8 @@ if (isset($_POST['usernameInput']) AND isset($_POST['fullNameInput']) AND isset(
   $addressInput = $_POST['addressInput'];
   $NICNumberInput = $_POST['NICNumberInput'];
 
+  // echo('<script>alert("good")</script>');
+
   $sql = "UPDATE ragistration SET fullName = '".$fullNameInput."', birthday = '".$birthdayInput."', mobileNumber = '".$mobileNumInput."', address = '".$addressInput."', NICNumber = '".$NICNumberInput."' WHERE userName = '".$usernameInput."'";
   if(mysqli_query($conn, $sql)){
   echo('Success');
@@ -132,7 +137,9 @@ if (isset($_POST['usernameInput']) AND isset($_POST['fullNameInput']) AND isset(
       alert("Your profile updated successfully...");
   </script>');
   }else {
-  echo('Failed');
+  echo('<script>window.location="adminUserDetails.php";
+  alert("Failed...");
+</script>');
   }
 
 }
