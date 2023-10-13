@@ -245,6 +245,43 @@ body{
   border-radius: 10px;
 }
 
+#delete-btn{
+
+  color: black;
+  position: relative;
+  display: inline-block;
+   margin-top: -5.7vh;
+  margin-left: 13vh; 
+
+  background: #ff0a0a;
+  box-shadow: #ac0f0f 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+}
+
+#delete-btn:hover{
+
+  background: #6b0303;
+  color: white;
+  border: 2px solid #1b5996;
+  border-radius: 10px;
+}
+
 footer{
   
   width: 100%;

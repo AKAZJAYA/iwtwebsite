@@ -95,24 +95,29 @@ include 'config.php';
       <label for="" class="change-vaccinecenter-Label">Change Vaccination Center: </label>
       <div class="center-select">
 
-        <select name="vaccinecenter" class="vaccinecenter-select" >
-          <option class="center-option" value="center1">Select Center</option>
-          <option class="center-option" value="center1">Center 1</option>
-          <option class="center-option" value="center2">Center 2</option>
-          <option class="center-option" value="center3">Center 3</option>
-          <option class="center-option" value="center4">Center 4</option>
+      <select name="vaccinecenter" class="vaccinecenter-select" required>
+          <option class="center-option" value="center1" disabled>Select Center</option>
+          <option class="center-option" value="Moratuwa">Moratuwa</option>
+          <option class="center-option" value="Galle">Galle</option>
+          <option class="center-option" value="Kandy">Kandy</option>
+          <option class="center-option" value="Kurunegala">Kurunegala</option>
+          <option class="center-option" value="Ratnapura">Ratnapura</option>
+          <option class="center-option" value="Badulla">Badulla</option>
         </select>
       </div>
 
       <label for="" class="change-vaccine-type-Label">Change Vaccine Type: </label>
       <div class="vaccine-select">
 
-        <select name="vaccinetype" class="vaccinetype-select" >
-          <option class="center-option" value="center1">Select Vaccine</option>
-          <option class="vaccine-option" value="center1">Vaccine 1</option>
-          <option class="vaccine-option" value="center2">Vaccine 2</option>
-          <option class="vaccine-option" value="center3">Vaccine 3</option>
-          <option class="vaccine-option" value="center4">Vaccine 4</option>
+      <select name="vaccinetype" class="vaccinetype-select" required>
+          <option class="center-option" value="center1" disabled>Select Vaccine</option>
+          <option class="vaccine-option" value="Sinopham">Sinopham</option>
+          <option class="vaccine-option" value="Pfizer">Pfizer</option>
+          <option class="vaccine-option" value="Sinovac">Sinovac</option>
+          <option class="vaccine-option" value="Fluarix Quadrivalent">Fluarix Quadrivalent</option>
+          <option class="vaccine-option" value="Rubella (MMR)">Rubella (MMR)</option>
+          <option class="vaccine-option" value="Hepatitis B.">Hepatitis B.</option>
+          <option class="vaccine-option" value="Poliomyelitis">Poliomyelitis</option>
         </select>
       </div>
     </div>

@@ -34,7 +34,7 @@
           <div class="detailAccess-section">
             
             <a href="./adminUserDetails.php"><button class="userDetails">User Details</button></a>
-            <button class="AppointmentDetails">Appointment Details</button>
+            <a href="./adminAppointmentDetails.php"><button class="AppointmentDetails">Appointment Details</button></a>
             <a href="./adminInquiryReply.php"><button class="Inquiries">Inquiries</button></a>
           </div>
           

@@ -15,7 +15,7 @@
 <head>
     
     <title>Admin User Details - DoseGuardian</title>
-    <link rel="stylesheet" href="./styles/adminUserDetails.css">
+    <link rel="stylesheet" href="./styles/adminAppointmentDetails.css">
     <script defer src="java/script.js"></script>
 
 </head>
@@ -31,11 +31,11 @@
       <!-- <img src="profileP-removebg-preview.png" alt="" id="profilephoto"> -->
   </header>
 
-  <div class="UserInfoListDiv">
-    <div class="UserInfoListUsers" id="UserInfoListUsers">
-      <h3>Users</h3>
-      <div id="UserInfoListUsersList"></div>
-      <form action="./adminUserDetails.php" method="POST">
+  <div class="AppointmentInfoListDiv">
+    <div class="AppointmentInfoListAppointment" id="AppointmentInfoListAppointment">
+      <h3>Appointments</h3>
+      <div id="AppointmentInfoListUsersList"></div>
+      <form action="./adminAppointmentDetails.php" method="POST">
         <table>
           <tr>
             <td>Username</td>
@@ -44,24 +44,37 @@
           </td>
           </tr>
           <tr>
-            <td>Full Name</td>
-            <td><input type="text" id="fullNameInput" name="fullNameInput"></td>
+            <td>Center</td>
+            <td><select class="option" name="centerInput" id="centerInput" required>
+            <option selected disabled>Select a Center</option>
+            <option>Moratuwa</option>
+            <option>Galle</option>
+            <option>Kandy</option>
+            <option>Kurunegala</option>
+            <option>Ratnapura</option>
+            <option>Badulla</option>
+        </select></td>
           </tr>
           <tr>
-            <td>Birthday</td>
-            <td><input type="date" id="birthdayInput" name="birthdayInput"></td>
+            <td>Vaccine</td>
+            <td><select class="option" name="vaccineTypeInput" id="vaccineTypeInput">
+            <option selected disabled>Select a Vaccine</option>
+            <option>Sinopham</option>
+            <option>Pfizer</option>
+            <option>Sinovac</option>
+            <option>Fluarix Quadrivalent</option>
+            <option>Rubella (MMR)</option>
+            <option>Hepatitis B.</option>
+            <option>Poliomyelitis</option>
+        </select></td>
           </tr>
           <tr>
-            <td>Mobile Number</td>
-            <td><input type="tel" maxlength="10" id="mobileNumInput" name="mobileNumInput"></td>
+            <td>Date</td>
+            <td><input type="tel" maxlength="10" id="dateInput" name="dateInput"></td>
           </tr>
           <tr>
-            <td>Address</td>
-            <td><input type="text" id="addressInput" name="addressInput"></td>
-          </tr>
-          <tr>
-            <td>NIC Number</td>
-            <td><input type="text" maxlength="12" id="NICNumberInput" name="NICNumberInput"></td>
+            <td>Times</td>
+            <td><input type="text" id="timeInput" name="timeInput"></td>
           </tr>
           <tr>
             <td></td>
@@ -88,7 +101,7 @@
   </script>
 
 <?php
-  $sql = "SELECT * FROM ragistration";
+  $sql = "SELECT * FROM appointment";
   $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -98,7 +111,7 @@
       if($username != "admin"){
         // echo ($username."<br>");
         echo ('<script>
-          var parent = document.getElementById("UserInfoListUsersList");
+          var parent = document.getElementById("AppointmentInfoListUsersList");
           var child = document.createElement("div");
           child.classList.add("nameTag");
           child.innerHTML = "'.$username.'";
@@ -108,11 +121,10 @@
           child.addEventListener("click", function (){
             document.getElementById("usernameInput").value =  "'.$username.'";
             document.getElementById("usernameInputDisplay").value =  "'.$username.'";
-            document.getElementById("fullNameInput").value =  "'.$row['fullName'].'";
-            document.getElementById("birthdayInput").value =  "'.$row['birthday'].'";
-            document.getElementById("mobileNumInput").value =  "'.$row['mobileNumber'].'";
-            document.getElementById("addressInput").value =  "'.$row['address'].'";
-            document.getElementById("NICNumberInput").value =  "'.$row['NICNumber'].'";
+            document.getElementById("centerInput").value =  "'.$row['center'].'";
+            document.getElementById("vaccineTypeInput").value =  "'.$row['vaccineType'].'";
+            document.getElementById("dateInput").value =  "'.$row['date'].'";
+            document.getElementById("timeInput").value =  "'.$row['time'].'";
           });
         </script>');
       }
@@ -124,24 +136,23 @@
 
 <?php
 
-if (isset($_POST['usernameInput']) AND isset($_POST['fullNameInput']) AND isset($_POST['birthdayInput']) AND isset($_POST['mobileNumInput']) AND isset($_POST['addressInput']) AND isset($_POST['NICNumberInput']) AND isset($_POST['submit-btn'])) {
+if (isset($_POST['usernameInput']) AND isset($_POST['centerInput']) AND isset($_POST['vaccineTypeInput']) AND isset($_POST['dateInput']) AND isset($_POST['timeInput']) AND isset($_POST['submit-btn'])) {
   $usernameInput = $_POST['usernameInput'];
-  $fullNameInput = $_POST['fullNameInput'];
-  $birthdayInput = $_POST['birthdayInput'];
-  $mobileNumInput = $_POST['mobileNumInput'];
-  $addressInput = $_POST['addressInput'];
-  $NICNumberInput = $_POST['NICNumberInput'];
+  $centerInput = $_POST['centerInput'];
+  $vaccineTypeInput = $_POST['vaccineTypeInput'];
+  $dateInput = $_POST['dateInput'];
+  $timeInput = $_POST['timeInput'];
 
   // echo('<script>alert("good")</script>');
 
-  $sql = "UPDATE ragistration SET fullName = '".$fullNameInput."', birthday = '".$birthdayInput."', mobileNumber = '".$mobileNumInput."', address = '".$addressInput."', NICNumber = '".$NICNumberInput."' WHERE userName = '".$usernameInput."'";
+  $sql = "UPDATE appointment SET center = '".$centerInput."', vaccineType = '".$vaccineTypeInput."', date = '".$dateInput."', time = '".$timeInput."' WHERE userName = '".$usernameInput."'";
   if(mysqli_query($conn, $sql)){
   echo('Success');
-  echo('<script>window.location="adminUserDetails.php";
+  echo('<script>window.location="adminAppointmentDetails.php";
       alert("Your profile updated successfully...");
   </script>');
   }else {
-  echo('<script>window.location="adminUserDetails.php";
+  echo('<script>window.location="adminAppointmentDetails.php";
   alert("Failed...");
 </script>');
   }
@@ -152,13 +163,13 @@ if(isset($_POST['usernameInput']) AND isset($_POST['delete-btn'])){
 
   $usernameInput = $_POST['usernameInput'];
 
-  $sql = "DELETE FROM ragistration WHERE userName = '".$usernameInput."'";
+  $sql = "DELETE FROM appointment WHERE userName = '".$usernameInput."'";
 	$result = mysqli_query($conn, $sql);
 
 	if($result){
 
-		echo('<script>window.location="adminUserDetails.php";
-					alert("Account deleted successfully...");
+		echo('<script>window.location="adminAppointmentDetails.php";
+					alert("Appointment deleted successfully...");
 				</script>');
 	}
 }

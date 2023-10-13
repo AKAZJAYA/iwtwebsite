@@ -82,46 +82,6 @@ body{
     width: 100%;
 }
 
-.logout-btn{
-
-  position: absolute;
-  top: 5%;
-  left: 93%;
-}
-
-#logoutBtn{
-
-  background: #0a95ff;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: Inter, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-  border-radius: 10px;
-  margin-top: 30px;
-  margin-left: 5px;
-  float: right;
-}
-
-#logoutBtn:hover{
-
-  background: #0074cc;
-  color: white;
-  border: 2px solid #1b5996;
-  border-radius: 10px;
-}
 
 
 /* Headtext */
@@ -134,19 +94,12 @@ body{
     
 }
 
-.detailAccess-section{
-
-  height: 50%;
-  padding-top: 
-  10%;
-}
-
 .userDetails{
 
   color: black;
   position: relative;
   display: inline-block;
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-left: 70vh;
 
   background: #0a95ff;
@@ -186,7 +139,7 @@ body{
   color: black;
   position: relative;
   display: inline-block;
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-left: 10vh;
 
   background: #0a95ff;
@@ -223,7 +176,7 @@ body{
   color: black;
   position: relative;
   display: inline-block;
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-left: 10vh;
 
   background: #0a95ff;
@@ -255,6 +208,79 @@ body{
   border-radius: 10px;
 }
 
+#submit-btn{
+
+  color: black;
+  position: relative;
+  display: inline-block;
+  /* margin-top: 15vh;
+  margin-left: 10vh; */
+
+  background: #0a95ff;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+}
+
+#submit-btn:hover{
+
+  background: #0074cc;
+  color: white;
+  border: 2px solid #1b5996;
+  border-radius: 10px;
+}
+
+#delete-btn{
+
+  color: black;
+  position: relative;
+  display: inline-block;
+   margin-top: -5.5vh;
+  margin-left: 13vh; 
+
+  background: #ff0a0a;
+  box-shadow: #ac0f0f 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  border-radius: 10px;
+}
+
+#delete-btn:hover{
+
+  background: #6b0303;
+  color: white;
+  border: 2px solid #1b5996;
+  border-radius: 10px;
+}
 
 footer{
   
@@ -282,4 +308,45 @@ a.help{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: wheat;
   position: relative;
+}
+
+.AppointmentInfoListDiv{
+  display: block;
+  position: relative;
+  padding-top: 200px;
+}
+
+.AppointmentInfoListAppointment{
+  display: block;
+  position: relative;
+  margin: 0 auto 0;
+  min-height: 300px;
+  height: 400px;
+  width: 75%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.nameTag{
+  display: inline-block;
+  position: relative;
+  padding: 10px 10px;
+  background-color: rgb(92, 94, 95);
+  color: white;
+  border-radius: 10px;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+}
+
+table{
+  display: block;
+  position: relative;
+  margin-left: 50%;
+  margin-top: 50px;
+  transform: translateX(-55%);
+}
+
+td{
+  min-width: 200px;
+  padding: 5px;
 }
