@@ -78,46 +78,61 @@
 
 
 <?php
-
+// Check if a cookie named 'UID' is set
 if(isset($_COOKIE['UID'])) {
+    // If the cookie is set, redirect to 'userdboard.php'
     echo('<script>window.location="userdboard.php"</script>');
 }
 
+// Check if any POST data has been submitted
+if (count($_POST) > 0) {
+    // Include the 'config.php' file
+    include 'config.php';
 
-    if (count($_POST) > 0) {
-        include 'config.php';
-
+    // Get the 'username' and 'password' from the POST data
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Prepare a SQL query to select a user from the 'ragistration' table where 'userName' matches the given username
     $query = "select * from ragistration where userName = ?";
     $stmt = $conn->prepare($query);
 
+    // Bind the 'username' parameter to the prepared statement
     $stmt->bind_param("s",$username);
+    // Execute the prepared statement
     $stmt->execute();
 
+    // Get the result of the executed statement
     $stmt_result = $stmt->get_result();
+
+    // Check if there are any rows in the result
     if($stmt_result->num_rows > 0){
 
+        // Fetch the data for the first row
         $data = $stmt_result->fetch_assoc();
-        if($data['password'] === $password){
 
+        // Check if the retrieved password matches the submitted password
+        if($data['password'] === $password){
+            // Set a cookie named 'UID' with the 'username' value, valid for 24 hours (86400 seconds)
             setcookie('UID', $username, time() + (86400), "/");
+            
+            // Check if the user is not an admin, and if so, show a success message and redirect to 'userdboard.php'
             if($username != "admin"){
                 echo "<script>alert ('Login Successfully....'); window.location='userdboard.php';</script>";
             }
+            // If the user is an admin, show a different success message and redirect to 'admin.php'
             else{
                 echo "<script>alert ('Logged as an Admin....'); window.location='admin.php';</script>";
             }
         }
         else{
-
+            // If the password doesn't match, show an error message and redirect to 'login.php'
             echo "<script>alert ('Invalid Email or Password..<br>Enter again...'); window.location='login.php';</script>";
         }
     }
     else{
-
+        // If no matching user is found, show an error message and redirect to 'login.php'
         echo "<script>alert ('Invalid Email or Password..<br>Enter again...'); window.location='login.php';</script>";
     }
-    }
+}
 ?>

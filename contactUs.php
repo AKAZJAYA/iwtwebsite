@@ -1,22 +1,31 @@
 <?php
-
+// Include the 'config.php' file to establish a database connection
 include 'config.php';
+
+// Get the value of the 'UID' cookie
 $UID = $_COOKIE['UID'];
 
-  $username = "";
-  $email = "";
+// Initialize 'username' and 'email' variables
+$username = "";
+$email = "";
 
-  $sql = "SELECT * FROM ragistration WHERE userName = '".$UID."'";
-  $result = mysqli_query($conn, $sql);
+// Construct an SQL query to select user information from the 'ragistration' table where 'userName' matches the 'UID'
+$sql = "SELECT * FROM ragistration WHERE userName = '".$UID."'";
 
-  if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    $username =  $row["userName"];
-    $email = $row['email'];
-  }
+// Execute the SQL query using the 'mysqli_query' function
+$result = mysqli_query($conn, $sql);
+
+// Check if there are any rows in the result set
+if (mysqli_num_rows($result) > 0) {
+    // Iterate through each row of the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Extract 'userName' and 'email' from the current row
+        $username = $row["userName"];
+        $email = $row['email'];
+    }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -133,37 +142,40 @@ include 'config.php';
 </body>
 </html>
 
-<?php 
+<?php
+// Include the 'config.php' file to establish a database connection
 include 'config.php';
-  $UID = $_COOKIE['UID'];
-  // echo($UID);
-  if ($UID == null) {
-   echo('<script>alert("You need to login first...."); window.location="login.php"</script>');
-  }
 
-if(isset($_POST['email']) AND isset($_POST['message'])){
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
+
+// Check if 'UID' is not set
+if ($UID == null) {
+    // If not logged in, display an alert message and redirect to 'login.php'
+    echo('<script>alert("You need to login first...."); window.location="login.php"</script>');
+}
+
+// Check if the 'email' and 'message' parameters are set in the POST data
+if (isset($_POST['email']) && isset($_POST['message'])) {
+    // Get values from the POST data
     $email = $_POST['email'];
     $message = $_POST['message'];
     $status = "pending";
 
-    $query = "insert into inquiries(userName, email, inquiry,Status) values (?, ?, ?, ?)";
+    // Prepare an SQL query to insert an inquiry into the 'inquiries' table
+    $query = "INSERT INTO inquiries (userName, email, inquiry, Status) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
 
-    $stmt->bind_param("ssss",$UID,$email,$message,$status);
+    // Bind the parameters to the prepared statement
+    $stmt->bind_param("ssss", $UID, $email, $message, $status);
 
-    if($stmt->execute()){
-
-      echo "<script>alert ('Message sent successfully...'); window.location='contactUs.php';</script>.";
-    }
-    else{
-
-        echo 'Unsuccessfull...';
+    // Execute the prepared statement and check if it's successful
+    if ($stmt->execute()) {
+        // If successful, display a success message and redirect to 'contactUs.php'
+        echo "<script>alert ('Message sent successfully...'); window.location='contactUs.php';</script>.";
+    } else {
+        // If execution is unsuccessful, display an error message
+        echo 'Unsuccessful...';
     }
 }
-  
-
-  
-
-
-
 ?>

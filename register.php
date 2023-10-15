@@ -1,36 +1,33 @@
-
 <?php
+// Include the 'config.php' file to establish a database connection
+include 'config.php';
 
-    include 'config.php';
+// Get values from the POST data
+$username = $_POST['username'];
+$password = $_POST['password'];
+$fullname = $_POST['fullname'];
+$gender = $_POST['gender'];
+$date = $_POST['date'];
+$mobilenumber = $_POST['mobilenumber'];
+$address = $_POST['address'];
+$number = $_POST['number'];
+$userType = "user"; // Set the user type to "user"
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $fullname = $_POST['fullname'];
-    $gender = $_POST['gender'];
-    $date = $_POST['date'];
-    $mobilenumber = $_POST['mobilenumber'];
-    $address = $_POST['address'];
-    $number = $_POST['number'];
-    $userType = "user";
+// Prepare an SQL query to insert data into the 'ragistration' table
+$query = "INSERT INTO ragistration (userName, password, fullName, birthday, gender, mobileNumber, address, NICNumber, userType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    //database connection
-    // $conn = new mysqli('localhost:3306','root','','onlinevaccinationportal');
+// Prepare a statement with the query
+$stmt = $conn->prepare($query);
 
-    $query = "insert into ragistration(userName, password, fullName, birthday, gender, mobileNumber, address, NICNumber, userType) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+// Bind the parameters to the prepared statement
+$stmt->bind_param("sssssisis", $username, $password, $fullname, $date, $gender, $mobilenumber, $address, $number, $userType);
 
-    $stmt = $conn->prepare($query);
-
-    $stmt->bind_param("sssssisis",$username,$password,$fullname,$date,$gender,$mobilenumber,$address,$number,$userType);
-    
-    if($stmt->execute()){
-
-        echo "<script>alert ('Thank you for registered. Now you can Login'); window.location='login.php';</script>.";
-    }
-    else{
-
-        echo 'Unsuccessfull...';
-    }
-    
-
-
+// Execute the prepared statement and check if it's successful
+if ($stmt->execute()) {
+    // If successful, show a success message and redirect to the login page
+    echo "<script>alert ('Thank you for registered. Now you can Login'); window.location='login.php';</script>.";
+} else {
+    // If execution is unsuccessful, show an error message
+    echo 'Unsuccessful...';
+}
 ?>

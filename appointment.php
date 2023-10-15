@@ -143,37 +143,36 @@ if (mysqli_num_rows($result) > 0) {
 </html>
 
 <?php
+// Include the 'config.php' file to establish a database connection
+include 'config.php';
 
-    include 'config.php';
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
 
-    $UID = $_COOKIE['UID'];
+// Check if the required POST parameters are set
+if (isset($_POST['vaccneCenter']) && isset($_POST['vaccineType']) && isset($_POST['date']) && isset($_POST['time'])) {
+    // Get values from the POST data
+    $vaccneCenter = $_POST['vaccneCenter'];
+    $vaccineType = $_POST['vaccineType'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
 
-    if (isset($_POST['vaccneCenter']) AND isset($_POST['vaccineType']) AND isset($_POST['date']) AND isset($_POST['time'])) {
-        $vaccneCenter = $_POST['vaccneCenter'];
-        $vaccineType = $_POST['vaccineType'];
-        $date = $_POST['date'];
-        $time = $_POST['time'];
+    // Prepare an SQL query to insert an appointment record into the 'appointment' table
+    $sql = "INSERT INTO appointment (userName, center, vaccineType, date, time) VALUES (?, ?, ?, ?, ?)";
 
-        //database connection
-        // $conn = new mysqli('localhost:3306','root','','onlinevaccinationportal');
+    // Prepare a statement with the SQL query
+    $stmt = $conn->prepare($sql);
 
-        $sql = "insert into appointment(userName, center, vaccineType, date, time) values (?, ?, ?, ?, ?)";
+    // Bind the parameters to the prepared statement
+    $stmt->bind_param("sssss", $UID, $vaccneCenter, $vaccineType, $date, $time);
 
-        $stmt = $conn->prepare($sql);
-
-        $stmt->bind_param("sssss",$UID, $vaccneCenter,$vaccineType,$date,$time);
-        
-        if($stmt->execute()){
-
-            echo "<script>alert ('Appointment scheduled successfully...'); window.location='userdboard.php';</script>.";
-        }
-        else{
-
-            echo 'Unsuccessfull...';
-        }
-    
+    // Execute the prepared statement and check if it's successful
+    if ($stmt->execute()) {
+        // If successful, display a success message and redirect to 'userdboard.php'
+        echo "<script>alert ('Appointment scheduled successfully...'); window.location='userdboard.php';</script>.";
+    } else {
+        // If execution is unsuccessful, display an error message
+        echo 'Unsuccessful...';
     }
-
-    
-
+}
 ?>

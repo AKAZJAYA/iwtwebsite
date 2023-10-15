@@ -76,5 +76,5 @@ document.getElementById("Notifications").onclick = function(){
 document.getElementById("support").onclick = function(){
 
     alert("Get you Medical support using COntact US page... Thank you!!!!");
-    window.location="contactus.html";    
+    window.location="contactUs.php";    
 }

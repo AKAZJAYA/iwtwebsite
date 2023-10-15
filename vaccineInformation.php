@@ -1,12 +1,17 @@
-<?php 
+<?php
+// Include the 'config.php' file to establish a database connection
 include 'config.php';
-  $UID = $_COOKIE['UID'];
-  // echo($UID);
-  if ($UID == null) {
-   echo('<script>window.location="login.php"</script>');
-  }
 
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
+
+// Check if 'UID' is not set
+if ($UID == null) {
+    // If 'UID' is not set, redirect to the 'login.php' page
+    echo('<script>window.location="login.php"</script>');
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

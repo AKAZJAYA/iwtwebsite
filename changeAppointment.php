@@ -1,10 +1,16 @@
 <?php 
+// Include the 'config.php' file to establish a database connection
 include 'config.php';
-  $UID = $_COOKIE['UID'];
-  // echo($UID);
-  if ($UID == null) {
-   echo('<script>window.location="login.php"</script>');
-  }
+
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
+
+// Check if 'UID' is null or not set
+if ($UID == null) {
+    // If 'UID' is not set, redirect to the 'login.php' page
+    echo('<script>window.location="login.php"</script>');
+}
+
 
   $AID = "no";
   $centre = "no";
@@ -45,12 +51,12 @@ include 'config.php';
 <body>
 
   <header class="header">
-      <img id="logo" src="./images/250356a297.jpeg">.jpeg">.jpeg">
+      <img id="logo" src="./images/250356a297.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
           <a href="./news.html">News</a>
           <a href="./about.html">About</a>
-          <a href="./contactUs.html">Contact Us</a>
+          <a href="./contactUs.php">Contact Us</a>
       </nav>
       <p class="header_username" id="header_username"><?php  echo($_COOKIE['UID']); ?></p>
       <img src="images/profileP-removebg-preview.png" alt="" id="profilephoto">

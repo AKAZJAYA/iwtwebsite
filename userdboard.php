@@ -64,15 +64,22 @@
 </body>
 </html>
 
-<?php 
+<?php
+// Include the 'config.php' file to establish a database connection
 include 'config.php';
-  $UID = $_COOKIE['UID'];
-  if ($UID == 'admin') {
-    echo "<script>window.location='admin.php';</script>";
-  }
-  // echo($UID);
-  if ($UID == null) {
-   echo('<script>window.location="login.php"</script>');
-  }
 
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
+
+// Check if 'UID' is equal to 'admin'
+if ($UID == 'admin') {
+    // If the user is an admin, redirect to 'admin.php'
+    echo "<script>window.location='admin.php';</script>";
+}
+
+// Check if 'UID' is not set
+if ($UID == null) {
+    // If 'UID' is not set, redirect to the 'login.php' page
+    echo('<script>window.location="login.php"</script>');
+}
 ?>

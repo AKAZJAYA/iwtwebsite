@@ -1,31 +1,39 @@
+<?php
+// Include the 'config.php' file to establish a database connection
+include 'config.php';
 
-<?php 
-	include 'config.php';
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
 
-	$UID = $_COOKIE['UID'];
+// Initialize variables for user information
+$fullname = "";
+$DOB = "";
+$gender = "";
+$email = "";
+$mobileNumber = "";
+$address = "";
 
-	$fullname = "";
-	$DOB = "";
-	$gender = "";
-	$email = "";
-	$mobileNumber = "";
-	$address = "";
-	
-	$sql = "SELECT * FROM ragistration WHERE userName = '".$UID."'";
-	$result = mysqli_query($conn, $sql);
+// Construct an SQL query to select user information from the 'ragistration' table where 'userName' matches the 'UID'
+$sql = "SELECT * FROM ragistration WHERE userName = '".$UID."'";
 
-	if (mysqli_num_rows($result) > 0) {
-	// output data of each row
-	while($row = mysqli_fetch_assoc($result)) {
-		$fullname =  $row["fullName"];
-		$DOB = $row["birthday"];
-		$gender = $row["gender"];
-		$email = $row['email'];
-		$mobileNumber = $row["mobileNumber"];
-		$address = $row["address"];
-	}
+// Execute the SQL query using the 'mysqli_query' function
+$result = mysqli_query($conn, $sql);
+
+// Check if there are any rows in the result set
+if (mysqli_num_rows($result) > 0) {
+    // Iterate through each row of the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Extract user information from the current row
+        $fullname =  $row["fullName"];
+        $DOB = $row["birthday"];
+        $gender = $row["gender"];
+        $email = $row['email'];
+        $mobileNumber = $row["mobileNumber"];
+        $address = $row["address"];
+    }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +47,7 @@
 <body>
 
   <header class="header">
-      <img id="logo" src="./images/250356a297.jpeg">.jpeg">.jpeg">.jpeg">.jpeg">.jpeg">.jpeg">
+      <img id="logo" src="./images/250356a297.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
           <a href="./news.html">News</a>

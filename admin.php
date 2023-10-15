@@ -1,11 +1,15 @@
 <?php
+// Include the 'config.php' file to establish a database connection
+include 'config.php';
 
-    include 'config.php';
-    $UID = $_COOKIE['UID'];
+// Get the value of the 'UID' cookie
+$UID = $_COOKIE['UID'];
 
-    if ($UID != "admin") {
-        echo('<script>alert("You are not a admin.... Please go back..!!!");window.location="userdboard.php"</script>');
-       }
+// Check if the 'UID' is not equal to "admin"
+if ($UID != "admin") {
+    // If not an admin, display an alert message and redirect to 'userdboard.php'
+    echo('<script>alert("You are not an admin. Please go back.");window.location="userdboard.php"</script>');
+}
 ?>
 
 <!DOCTYPE html>
