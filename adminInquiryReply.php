@@ -28,7 +28,7 @@ $username = "";
 <body>
 
   <header class="header">
-      <img class="logo" src="images/logo1.jpeg">
+      <img class="logo" src="./images/250356a297.jpeg">
       <nav class="navbar">
           <a href="./admin.php">Home</a>
           

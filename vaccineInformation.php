@@ -24,7 +24,7 @@ if ($UID == null) {
 </head>
 <body>
     <header class="header">
-        <img id="logo" src="images/logo1.jpeg" alt="DoseGuardian Logo">
+        <img id="logo" src="./images/250356a297.jpeg" alt="DoseGuardian Logo">
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="./news.html">News</a>
