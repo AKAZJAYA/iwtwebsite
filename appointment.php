@@ -30,7 +30,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
   <header class="header">
-      <img id="logo" src="images/logo1.jpeg">
+      <img id="logo" src="./images/250356a297.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
           <a href="./news.html">News</a>

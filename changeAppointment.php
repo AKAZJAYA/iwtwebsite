@@ -45,7 +45,7 @@ include 'config.php';
 <body>
 
   <header class="header">
-      <img id="logo" src="images/logo1.jpeg">
+      <img id="logo" src="./images/250356a297.jpeg">.jpeg">.jpeg">
       <nav class="navbar">
           <a href="index.html">Home</a>
           <a href="./news.html">News</a>
